@@ -1,0 +1,1 @@
+string[] obstacle_names
