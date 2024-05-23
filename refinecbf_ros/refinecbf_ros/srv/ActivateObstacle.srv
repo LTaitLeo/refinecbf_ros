@@ -1,4 +1,0 @@
-# ActivateObstacle.srv
-int64 obstacleNumber
----
-string response
