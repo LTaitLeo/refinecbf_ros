@@ -19,7 +19,7 @@
   <arg name="vf_initialization_method" default="cbf" />
   
     <!-- Simulation or hardware -->
-  <arg name="hardware" default="False" />
+  <arg name="hardware" default="True" />
 
   <!-- Teleop Active or Not-->
   <arg name="teleop" default="False" />
@@ -45,6 +45,9 @@
 
     <!-- Choose the Nominal Controller to be used. Options: PD or HJR-->
   <arg name="nominal_controller_type" default="PD" />
+
+    <!-- Use an SDF for the CBF instead of using refineCBF -->
+  <arg name="use_sdf" default="False" />
 
   <!-- ___________________________________________________________________________________________________________ -->
   <!-- Topics that are typically fixed and are shared between different launch files -->
@@ -171,6 +174,7 @@
     <arg name="vf_update_topic" value="$(arg vf_update_topic)" />
     <arg name="actuation_update_topic" value="$(arg actuation_update_topic)" />
     <arg name="sdf_update_topic" value="$(arg sdf_update_topic)" />
+    <arg name="use_sdf" value="$(arg use_sdf)" />
     <arg name="disturbance_update_topic" value="$(arg disturbance_update_topic)" />
     <arg name="safety_filter_active" value="$(arg safety_filter_active)" />
     <arg name="vf_initialization_method" value="$(arg vf_initialization_method)"/>
