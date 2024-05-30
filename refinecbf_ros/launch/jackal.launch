@@ -30,17 +30,17 @@
            1. pubsub:   flattens the vf and passes it 
            2. file:     Saves it as a file and pubsubs a Boolean
     -->
-  <arg name="vf_update_method" default="pubsub" />
-  <arg name="vf_update_accuracy" default="high" />
+  <arg name="vf_update_method" default="file" />
+  <arg name="vf_update_accuracy" default="medium" />
 
     <!-- Choose which files to load to describe the environment -->
-  <arg name="env_config_file" default="Experiment2/env.yaml" />
+  <arg name="env_config_file" default="Experiment1/env.yaml" />
   
     <!-- Choose which files to load to describe the refinecbf internal nominal controller -->
-  <arg name="control_config_file" default="Experiment2/control.yaml" />
+  <arg name="control_config_file" default="Experiment1/control.yaml" />
 
     <!-- Choose the name of CBF parameter file or initial vf file -->
-  <arg name="CBF_parameter_file" default="Experiment2/CBF_params.yaml" />
+  <arg name="CBF_parameter_file" default="Experiment1/CBF_params.yaml" />
   <arg name="initial_vf_file" default="jackal_vf.npy" />
 
     <!-- Choose the Nominal Controller to be used. Options: PD or HJR-->
@@ -80,7 +80,7 @@
   <arg name="publish_external_control_flag" value="/safety_filter/externally_controlled" />
 
 
-  <arg name="config_file_loc" value="$(find refinecbf_ros)/config/Jackal/$(arg env_config_file)" />
+<arg name="config_file_loc" value="$(find refinecbf_ros)/config/Jackal/$(arg env_config_file)" />
   <rosparam ns="env" file="$(arg config_file_loc)" command="load" />
   
   <arg name="control_config_file_loc"
@@ -109,11 +109,11 @@
     </node>
   </group>
 
-  <group>
+  <!-- <group>
     <param name="use_gui" value="true"/>
     <arg name="config" default="jackal_rviz" />
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find refinecbf_ros)/rviz/$(arg config).rviz" />
-  </group>
+  </group> -->
 
   <node name="jackal_nominal_control"
     pkg="refinecbf_ros"

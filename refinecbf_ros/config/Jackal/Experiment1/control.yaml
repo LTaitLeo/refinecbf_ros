@@ -1,8 +1,8 @@
 nominal:
   goal:
     coordinates:
-      - 1.75
-      - 1.75
+      - 2.8
+      - 0.0
       - 0
     padding:
       - 0.05
